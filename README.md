@@ -9,6 +9,10 @@ tha-eng-wn is Thai-English bidix generator from Wordnet
 
     gem install sqlite3
 
-### wNsql
+### wnsql
 
-    ./download_wn.sh
+    sh download_wn.sh
+
+## Run
+
+    ruby to_bidix.rb
