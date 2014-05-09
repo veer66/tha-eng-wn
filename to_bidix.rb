@@ -110,7 +110,7 @@ ThaWnReader.new.read do |entry|
   tha = tha_lemma.encode(:xml => :text)
   s = "<s n=\"#{pos}\"/>"
   eng_lemmas.each do |eng|
-    eng = eng.encode(:xml => :text).gsub(" ", "</b>")
-    puts "<e><p><l>#{eng}#{s}</l><r>#{tha}#{s}</r></p></e>"
+    eng = eng.encode(:xml => :text).gsub(" ", "<b/>")
+    puts "<e><p><r>#{tha}#{s}</r><l>#{eng}#{s}</l></p></e>"
   end
 end
