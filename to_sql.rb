@@ -67,12 +67,12 @@ class ThaWnReader
 end
 
 puts "DROP TABLE IF EXISTS tha;" 
-puts "CREATE TABLE tha(senseid int, pos text, lemma text);"
+puts "CREATE TABLE tha(synsetid int, pos text, lemma text);"
 puts "BEGIN;"
 ThaWnReader.new.read do |entry|
   id = entry["id"]
   pos = entry["pos"].to_json
   lemma = entry["lemma"].to_json
-  puts "INSERT INTO tha(senseid, pos, lemma) VALUES(#{id}, #{pos}, #{lemma});"
+  puts "INSERT INTO tha(synsetid, pos, lemma) VALUES(#{id}, #{pos}, #{lemma});"
 end
 puts "COMMIT;"
